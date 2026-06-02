@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">My Pregnancy Companion</string>
+    <string name="title_activity_main">My Pregnancy Companion</string>
+    <string name="package_name">com.abhishek.pregnancycompanion</string>
+    <string name="custom_url_scheme">com.abhishek.pregnancycompanion</string>
+</resources>
