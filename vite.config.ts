@@ -7,9 +7,17 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Skip nitro entirely — we deploy as a static SPA to Vercel / Capacitor.
+  // Vite-only build outputs to `dist/` with an `index.html` shell.
+  nitro: false,
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+    spa: {
+      enabled: true,
+      prerender: { outputPath: "/index.html" },
+    },
+  },
+  vite: {
+    base: "./",
+    build: { outDir: "dist" },
   },
 });
